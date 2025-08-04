@@ -83,20 +83,5 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  primary: &primary_production
-    <<: *default
-    database: <%= ENV.fetch("DATABASE_NAME") { "app_production" } %>
-    username: <%= ENV.fetch("DATABASE_USERNAME") { "app" } %>
-    password: <%= ENV["DATABASE_PASSWORD"] %>
-  cache:
-    <<: *primary_production
-    database: <%= ENV.fetch("CACHE_DATABASE_NAME") { "app_production_cache" } %>
-    migrations_paths: db/cache_migrate
-  queue:
-    <<: *primary_production
-    database: <%= ENV.fetch("QUEUE_DATABASE_NAME") { "app_production_queue" } %>
-    migrations_paths: db/queue_migrate
-  cable:
-    <<: *primary_production
-    database: <%= ENV.fetch("CABLE_DATABASE_NAME") { "app_production_cable" } %>
-    migrations_paths: db/cable_migrate
+  <<: *default
+  database: <%= ENV.fetch("DATABASE_NAME") { "app_production" } %>
