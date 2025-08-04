@@ -10,6 +10,11 @@
 # Ignore all environment files.
 /.env*
 
+# Environment variables
+.env
+# Keep the example file
+!.env.example
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
